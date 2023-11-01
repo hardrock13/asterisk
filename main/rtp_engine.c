@@ -3701,7 +3701,7 @@ int ast_rtp_engine_init(void)
 	set_next_mime_type(ast_format_g722, 0, "audio", "G722", 8000);
 	set_next_mime_type(ast_format_g726_aal2, 0, "audio", "AAL2-G726-32", 8000);
 	set_next_mime_type(NULL, AST_RTP_DTMF, "audio", "telephone-event", 8000);
-	set_next_mime_type(NULL, AST_RTP_DTMF, "audio", "telephone-event", 16000);
+	set_next_mime_type(NULL, AST_RTP_DTMF, "audio", "telephone-event", 16000); // added for 16k support test
 	set_next_mime_type(NULL, AST_RTP_CISCO_DTMF, "audio", "cisco-telephone-event", 8000);
 	set_next_mime_type(NULL, AST_RTP_CN, "audio", "CN", 8000);
 	set_next_mime_type(ast_format_jpeg, 0, "video", "JPEG", 90000);
@@ -3767,6 +3767,7 @@ int ast_rtp_engine_init(void)
 	add_static_payload(110, ast_format_speex, 0);
 	add_static_payload(111, ast_format_g726, 0);
 	add_static_payload(112, ast_format_g726_aal2, 0);
+//	add_static_payload(113, NULL, AST_RTP_DTMF); might be necessary
 
 	add_static_payload(115, ast_format_siren14, 0);
 	add_static_payload(116, ast_format_g719, 0);
