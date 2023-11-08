@@ -3758,7 +3758,8 @@ int ast_rtp_engine_init(void)
 	add_static_payload(102, ast_format_siren7, 0);
 	add_static_payload(103, ast_format_h263p, 0);
 	add_static_payload(104, ast_format_mp4, 0);
-	add_static_payload(105, ast_format_t140_red, 0);   /* Real time text chat (with redundancy encoding) */
+//	add_static_payload(105, ast_format_t140_red, 0);   /* Real time text chat (with redundancy encoding) */
+	add_static_payload(105, NULL, AST_RTP_DTMF);	/* This will correspond to telephone-event/16000 that A1 SBCs send */
 	add_static_payload(106, ast_format_t140, 0);     /* Real time text chat */
 	add_static_payload(107, ast_format_opus, 0);
 	add_static_payload(108, ast_format_vp9, 0);
@@ -3767,7 +3768,6 @@ int ast_rtp_engine_init(void)
 	add_static_payload(110, ast_format_speex, 0);
 	add_static_payload(111, ast_format_g726, 0);
 	add_static_payload(112, ast_format_g726_aal2, 0);
-//	add_static_payload(113, NULL, AST_RTP_DTMF); might be necessary
 
 	add_static_payload(115, ast_format_siren14, 0);
 	add_static_payload(116, ast_format_g719, 0);
